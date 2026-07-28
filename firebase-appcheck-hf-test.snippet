@@ -1,0 +1,13 @@
+# Quantumult X Response Debug
+# Test if script-response-body is triggered
+
+hostname = firebaseappcheck.googleapis.com
+
+# Test with simplified response
+^https://firebaseappcheck.googleapis.com.*$ url script-response-body https://raw.githubusercontent.com/w902287/qx-firebase-appcheck-sync/main/test_debug.js
+
+# Test with exact endpoint
+^https:\/\/firebaseappcheck\.googleapis\.com\/v1\/projects\/to-do-speak-ai\/apps\/1:790398438370:ios:7fea4e3959c6f21ae607bb:exchangeAppAttestAssertion.*$ url script-response-body https://raw.githubusercontent.com/w902287/qx-firebase-appcheck-sync/main/test_debug.js
+
+# Test with partial match
+^https://firebaseappcheck.googleapis.com/v1/projects/to-do-speak-ai/apps.*$ url script-response-body https://raw.githubusercontent.com/w902287/qx-firebase-appcheck-sync/main/test_debug.js
