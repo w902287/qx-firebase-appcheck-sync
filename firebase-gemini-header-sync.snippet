@@ -1,0 +1,5 @@
+[rewrite_local]
+^https:\/\/firebasevertexai\.googleapis\.com\/v1beta\/projects\/to-do-speak-ai\/models\/gemini-.* url script-request-header https://raw.githubusercontent.com/w902287/qx-firebase-appcheck-sync/main/firebase_gemini_header_sync_qx.js
+
+[mitm]
+hostname = firebasevertexai.googleapis.com
