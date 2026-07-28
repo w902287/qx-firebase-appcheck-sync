@@ -1,9 +1,4 @@
-#!name=Firebase App Check 自动同步 HF
-#!desc=To-Do Speak AI 每次刷新 App Check 后，自动热更新 Firebase Gemini Proxy
-#!author=Minis
-
-[rewrite_local]
+; Firebase App Check 自动同步 HF
+; To-Do Speak AI 每次刷新 App Check 后，自动热更新 Firebase Gemini Proxy
+hostname = firebaseappcheck.googleapis.com
 ^https:\/\/firebaseappcheck\.googleapis\.com\/v1\/projects\/to-do-speak-ai\/apps\/1:790398438370:ios:7fea4e3959c6f21ae607bb:exchangeAppAttestAssertion(?:\?.*)?$ url script-response-body https://raw.githubusercontent.com/w902287/qx-firebase-appcheck-sync/4338f12695281f3ddc9c6dba183ee5aabe0fc7a8/firebase_appcheck_sync_qx.js
-
-[mitm]
-hostname = %APPEND% firebaseappcheck.googleapis.com
