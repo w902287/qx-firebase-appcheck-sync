@@ -2,7 +2,10 @@
 const HF_PROXY_URL = "https://w902287-firebase-gemini-proxy.hf.space/admin/appcheck";
 const HF_SECRET_URL = "https://huggingface.co/api/spaces/w902287/firebase-gemini-proxy/secrets";
 const PREF_KEY = "firebase_gemini_hf_token";
-const INLINE_TOKEN = "__PASTE_YOUR_HF_TOKEN_HERE__";
+
+// ⚠️ Users must set their own HF Personal Access Token via:
+// Run set_hf_token_qx.js once, or edit this file and replace "" below.
+const INLINE_TOKEN = ""; // Replace with your hf_*** PAT
 const HF_TOKEN = ($prefs.valueForKey(PREF_KEY) || INLINE_TOKEN || "").trim();
 const originalBody = $response.body || "";
 const done = () => $done({ body: originalBody });
