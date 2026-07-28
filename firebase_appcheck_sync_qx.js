@@ -34,8 +34,7 @@ if (payload) {
     }).then(resp => {
       const ok = resp.statusCode >= 200 && resp.statusCode < 300;
       console.log("[AppCheck Sync] HF HTTP " + resp.statusCode);
-      if (ok) $notify("Firebase App Check", "同步成功", "新的 JWT 已上传到 Gemini Proxy");
-      else $notify("Firebase App Check", "同步失败", "HF HTTP " + resp.statusCode);
+      if (!ok) $notify("Firebase App Check", "同步失败", "HF HTTP " + resp.statusCode);
       done();
     }, err => {
       console.log("[AppCheck Sync] 上传失败: " + JSON.stringify(err));
