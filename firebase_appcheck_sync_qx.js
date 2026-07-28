@@ -1,6 +1,8 @@
 /* Quantumult X: Firebase App Check -> HF 自动同步 */
 const HF_URL = "https://w902287-firebase-gemini-proxy.hf.space/admin/appcheck";
-const HF_TOKEN = "__PASTE_YOUR_HF_TOKEN_HERE__";
+const PREF_KEY = "firebase_gemini_hf_token";
+const INLINE_TOKEN = "__PASTE_YOUR_HF_TOKEN_HERE__";
+const HF_TOKEN = ($prefs.valueForKey(PREF_KEY) || INLINE_TOKEN || "").trim();
 const originalBody = $response.body || "";
 
 function done() { $done({ body: originalBody }); }
